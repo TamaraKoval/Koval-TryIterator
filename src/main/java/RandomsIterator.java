@@ -3,11 +3,11 @@ import java.util.Random;
 
 public class RandomsIterator implements Iterator<Integer> {
 
-    protected final Random random;
+    protected final Random RANDOM;
     protected final int MIN, MAX;
 
     public RandomsIterator(Random random, int min, int max) {
-        this.random = random;
+        this.RANDOM = random;
         this.MIN = min;
         this.MAX = max;
     }
@@ -20,7 +20,7 @@ public class RandomsIterator implements Iterator<Integer> {
     @Override
     public Integer next() {
         int diff = MAX - MIN;
-        int i = random.nextInt(diff + 1);
+        int i = RANDOM.nextInt(diff + 1);
         i += MIN;
         return i;
     }
